@@ -1,21 +1,23 @@
+// Assets
 import Logo from '../../assets/LOGO.png'
+// Link
 import { Link } from 'react-router-dom'
-import headerModule from '../../styles/Header.module.css'
-import { StyledLink } from '../../styles/Atoms'
+// Styles
+import { StyledLink, DivHeaderContainer, LogoHeader } from '../../utils/styles/Header'
 
 function Header() {
   return (
-    <div className={headerModule.divHeaderContainer}>
+    <DivHeaderContainer>
       <div>
         <Link to="/">
-          <img src={Logo} className={headerModule.logoHeader} alt="" />
+          <LogoHeader src={Logo} alt="" />
         </Link>
       </div>
-      <div className={headerModule.navHeader}>
+      <div>
         <StyledLink to="/">Accueil</StyledLink>
         <StyledLink to="/propos">À Propos</StyledLink>
       </div>
-    </div>
+    </DivHeaderContainer>
   )
 }
 

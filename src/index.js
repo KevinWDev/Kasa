@@ -1,22 +1,35 @@
+// React
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './styles/index.css'
+import './utils/styles/index.css'
 
+// Composants / Pages
+import Container from './components/Container'
 import Header from './components/Header'
 import Home from './pages/Home/index.jsx'
 import Propos from './pages/Propos'
+import Logement from './pages/Logements'
 
+// Styles
+import StyledGlobalStyle from './utils/styles/GlobalStyle'
+
+// Routes
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/propos" element={<Propos />} />
-      </Routes>
+      <StyledGlobalStyle />
+      <Container>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/propos" element={<Propos />} />
+          <Route path="/logement/:id/" element={<Logement />}></Route>
+        </Routes>
+      </Container>
     </Router>
   </React.StrictMode>
 )
