@@ -1,6 +1,6 @@
 function Propos() {
     return (
-        <div>
+        <div>   
             <h1>Ma page à propos</h1>
         </div>
     )
