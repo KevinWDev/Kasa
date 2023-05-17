@@ -1,4 +1,5 @@
 .container-main-logement {
+    width: 100%;
     margin-top: 25px;
 }
 .container-div-title-host {
@@ -29,6 +30,7 @@
 }
 .div-tags {
     padding-right: 30px;
+   
 }
 .container-host {
     display: flex;
@@ -48,4 +50,19 @@
 .picture-host {
     border-radius: 50%;
     max-width: 64px;
+}
+.container-infos-logement {
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid blue; */
+    /* justify-content: space-between; */
+   width: 100%;
+}
+.container-infos-logement > div:first-child {
+    padding-right: 5.27778vw
+}
+
+.div-infos-padding {
+    width: 100%;
+    /* padding-right: 5.27778vw */
 }
