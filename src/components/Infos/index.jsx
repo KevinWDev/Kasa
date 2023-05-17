@@ -1,30 +1,43 @@
 // Hooks
-import { useState } from "react"
+import { useState } from 'react';
+// Styles
+import {ContainerInfosOpen,ContainerInfosClose, BtnInfos, ImgArrow, DivInfos} from '../../utils/styles/Infos.jsx'
 
+import arrowBack from '../../assets/arrows/arrowBack.png'
+import arrowUp from '../../assets/arrows/arrowUp.png'
 
-function Infos(props) {
-    const [isOpen, setIsOpen] = useState(true)
+function Infos({name, children}) {
+  const [isOpen, setIsOpen] = useState(true);
 
-    return isOpen ? (
-        <div className="container-infos" style={{
-            maxWidth: "582px",
-            height: "300px",
-            border: "1px solid red"
-        }}>
-            
-            <button className="btn-infos" onClick={() => setIsOpen(false)}>{props.children}</button>
-        </div>
-           ) : (
-            <div>
-<button className="btn-infos" onClick={() => setIsOpen(true)}>{props.children}</button>
-               <p>{props.description}{props.equipments}</p>
-            </div>
-                
+  return isOpen ? (
 
-           )
-           
+<ContainerInfosClose>
+        
+        <BtnInfos onClick={() => setIsOpen(false)}>
+        {name}
+        <ImgArrow src={arrowBack} alt="" />
+      </BtnInfos>
+       
+      
+    </ContainerInfosClose>
+
+    
+    
+  ) : (
+    
+<ContainerInfosOpen >
+        
+        <BtnInfos onClick={() => setIsOpen(true)}>
+        {name}
+        <ImgArrow src={arrowUp} alt="" />
+      </BtnInfos>
+      <DivInfos>
+        {children}
+      </DivInfos>
+    
+    </ContainerInfosOpen>
+
+  );
 }
 
-export default Infos
-
-
+export default Infos;

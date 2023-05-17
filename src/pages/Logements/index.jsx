@@ -28,7 +28,7 @@ function Logement() {
   let descriptionById = dataById?.description;
   let equipmentsById = dataById?.equipments;
   const picturesbYId = dataById?.pictures;
-
+console.log(dataById);
 
   return (
     <div className='container-main-logement'>
@@ -67,10 +67,27 @@ function Logement() {
         </div>
       </div>
 
-        <div>
-            <Infos>
-              Description    
+        <div className='container-infos-logement'>
+        
+        <div className='div-infos-padding'>
+        <Infos name="Description" >
+                {descriptionById}   
             </Infos>
+         
+        </div>
+        
+         
+            
+            <div className='div-infos-padding'>
+            <Infos name="Équipements">
+              {equipmentsById.map((equip, index) => {
+                return <li key={index}>{equip}</li>
+              })}
+            </Infos>
+            </div>
+           
+           
+            
         </div>
       
     </div>
