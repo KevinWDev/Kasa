@@ -1,0 +1,40 @@
+.divLink {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 57px;
+}
+
+.styledLink {
+    font-size: clamp(12px, 3vw, 24px);
+    font-weight: 500;
+    color: #FF6060;
+    text-decoration: none;
+}
+.styledLink:hover {
+    text-decoration: underline;
+}
+
+.divHeaderContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoHeader {
+    width: 100%;
+    min-width: 145px;
+    height: 100%;
+    min-height: 47px;
+    display: block;
+}
+@media screen and (max-width: 767px) {
+    .divLink {
+        gap: 12px;
+    }
+    .logoHeader {
+        width: 145px;
+        height: 47px;
+    }
+}

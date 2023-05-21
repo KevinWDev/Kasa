@@ -1,11 +1,10 @@
 // Styles
-import { MainContainer } from '../../utils/styles/Container'
-
+import styles from '../../utils/styles/Container.module.css'
 
 function Container({ children }) {
 
-
-  return <MainContainer className="myContainer">{children}</MainContainer>
+  return <div className={styles.mainContainer}>{children}</div>
+  
 }
 
 export default Container

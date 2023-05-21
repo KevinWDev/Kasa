@@ -1,61 +1,41 @@
 // Datas
-import { datas } from '../../datas/datas.js'
-
+import  datas  from '../../datas/datas.json';
 // Styles
-import '../../utils/styles/Home.css'
-
+import '../../utils/styles/Home.css';
 // Composants / Pages
-import Card from '../../components/Card'
-
+import Card from '../../components/Card';
 // Assets
-import MaskGroup from '../../assets/MaskGroup.png'
-
+import ImageHome from '../../assets/imgHome.png'
 
 function Home() {
 
   return (
     <div className="mainContainerHome">
-      <div className="divContainer">
-        <img className="imgHome" src={MaskGroup} alt="" />
-
-        <p className="homeParagraph">Chez vous, partout et ailleurs</p>
+      <div  className="divContainer">
+        <img className='imageHome' src={ImageHome} alt="" />   
+        <h1 className='paragraph-image-home'>Chez vous, partout et ailleurs</h1>
       </div>
-      <div className="divGridCard">
+
+      <main className="divGridCard">
         <div className="gridCard">
-         
+
           {datas.map(
-            ({
-              id,
-              cover,
-              title,
-              description,
-              equipements,
-              host,
-              location,
-              tags,
-              pictures,
-              rating,
-            }) => (
-              <div key={`${id}`}>
+            (data) => (
+              <div key={`${data.id}`}>
                 <Card
-                  id={id}
-                  cover={cover}
-                  title={title}
-                  description={description}
-                  equipements={equipements}
-                  host={host}
-                  location={location}
-                  tags={tags}
-                  pictures={pictures}
-                  rating={rating}
+                  
+                  id={data.id}
+                  title={data.title}
+                  cover={data.cover}
+    
                 />
               </div>
             )
           )}
         </div>
-      </div>
+      </main>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

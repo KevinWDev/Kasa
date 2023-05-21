@@ -1,35 +1,24 @@
 // Styles
-import {
-  ContainerPropriete,
-  ProprieteParagraph,
-  DivContainerPara,
-} from '../../utils/styles/Card.module'
+import '../../utils/styles/Card.css'
 
 // Hooks
 import { useNavigate } from 'react-router-dom'
 
 
-function Card({ id, title, description, equipments, host, location, tags, rating, pictures}) {
+function Card({ id, title, cover }) {
 
-
-
-  let navigate = useNavigate()
+let navigate = useNavigate()
 
 function goToLogement() {
-
   let path = ("../logement/"+id)
   navigate(path)
 }
-
-
-
   return (
 
-    <ContainerPropriete onClick={() => goToLogement()}>   
-      <DivContainerPara>
-        <ProprieteParagraph>{title}</ProprieteParagraph>
-      </DivContainerPara>  
-    </ContainerPropriete>
+    <div className='containerPropriete' onClick={() => goToLogement()}> 
+     <img className='imageCards' src={cover} alt="" />
+        <h3 className='proprieteParagraph'>{title}</h3>
+    </div>
 
   )
 }
