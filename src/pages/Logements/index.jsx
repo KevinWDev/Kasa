@@ -1,22 +1,19 @@
 // Hooks
 import { useParams } from 'react-router-dom';
 // Datas
-import { datas } from '../../datas/datas';
+import datas from '../../datas/datas.json';
 // Composants / Pages
 import Carousel from '../../components/Carousel';
-import Infos from '../../components/Infos';
+import Collapse from '../../components/Collapse';
 // Styles
 import '../../utils/styles/Logement.css';
-import { StyledRating } from '../../utils/styles/Logement.jsx';
-import StarRoundedIcon from '@mui/icons-material/StarRounded';
-
-
+// Assets
+import starRed from '../../assets/stars/startRed.png';
+import starGray from '../../assets/stars/startGray.png';
 
 function Logement() {
 
   const { id } = useParams();
-
-
 
   let dataById = datas.find((d) => d.id === id);
   let titleById = dataById?.title;
@@ -27,15 +24,22 @@ function Logement() {
   let ratingsById = dataById?.rating;
   let descriptionById = dataById?.description;
   let equipmentsById = dataById?.equipments;
-  const picturesbYId = dataById?.pictures;
-console.log(dataById);
+  let picturesbyId = dataById?.pictures;
+  
+  const addStar = (rating) => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      const starClass = i < rating ? starRed : starGray;
+      stars.push(<img src={starClass} alt="rating" key={i} className="star" />);
+    }
+    return stars;
+  };
 
   return (
-    <div className='container-main-logement'>
+    <div className="container-main-logement">
+      <Carousel dataById={dataById} picture={picturesbyId} />
 
-      <Carousel dataById={dataById} />
-      
-      <div className='container-div-title-host'>
+      <section className="container-div-title-host">
         <div className="container-title-parag-tags">
           <h1 className="title-logement">{titleById}</h1>
           <p className="parag-logement">{locationById}</p>
@@ -43,53 +47,36 @@ console.log(dataById);
             {tagsById.map((tags, index) => {
               return (
                 <div className="div-tags" key={index}>
-                  <p className="tags">
-                    {tags}
-                  </p>
+                  <p className="tags">{tags}</p>
                 </div>
               );
             })}
           </div>
         </div>
+
         <div className="container-host">
           <div className="container-with-host-picture">
             <p className="name-host">{hostNameById}</p>
             <img className="picture-host" src={hostPictureById} alt="" />
           </div>
-          <div>
-            <StyledRating
-            value={+ratingsById}
-            icon={<StarRoundedIcon fontSize='large'/>}
-            emptyIcon={<StarRoundedIcon fontSize='large'/>}
-            />
-          </div>
-      
-        </div>
-      </div>
 
-        <div className='container-infos-logement'>
-        
-        <div className='div-infos-padding'>
-        <Infos name="Description" >
-                {descriptionById}   
-            </Infos>
-         
+          <div className="styleRating">{addStar(ratingsById)}</div>
         </div>
-        
-         
-            
-            <div className='div-infos-padding'>
-            <Infos name="Équipements">
-              {equipmentsById.map((equip, index) => {
-                return <li key={index}>{equip}</li>
-              })}
-            </Infos>
-            </div>
-           
-           
-            
-        </div>
-      
+      </section>
+
+      <section className="container-infos-logement">
+        <aside className="div-infos-padding">
+          <Collapse name="Description">{descriptionById}</Collapse>
+        </aside>
+
+        <aside className="div-infos-padding">
+          <Collapse name="Équipements">
+            {equipmentsById.map((equip, index) => {
+              return <li key={index}>{equip}</li>;
+            })}
+          </Collapse>
+        </aside>
+      </section>
     </div>
   );
 }

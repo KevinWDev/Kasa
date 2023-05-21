@@ -1,0 +1,39 @@
+.containerPropriete {
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 340px;
+}
+
+.proprieteParagraph {
+  position: absolute;
+  color: black;
+  bottom: 7%;
+  left: 5%;
+  right: 5%;
+  padding-left: 3px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: inset 0 0 7px black;
+  font-size: 18px;
+  font-weight: 500;
+}
+.imageCards {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 991px) {
+  .containerPropriete {
+    height: 255px;
+  }
+}
