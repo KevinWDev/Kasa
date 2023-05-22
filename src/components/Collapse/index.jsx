@@ -1,7 +1,7 @@
 // Hooks
 import { useState } from 'react';
 // Styles
-import styles from '../../utils/styles/Infos.module.css'
+import styles from '../../utils/styles/Collapse.module.css'
 // Assets
 import arrowBack from '../../assets/arrows/arrowBack.png'
 import arrowUp from '../../assets/arrows/arrowUp.png'
