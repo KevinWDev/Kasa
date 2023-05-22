@@ -9,23 +9,28 @@
   cursor: pointer;
   border-radius: 10px;
   height: 340px;
+  background-color: black;
+  mix-blend-mode: darken;
+
 }
 
 .proprieteParagraph {
   position: absolute;
-  color: black;
+  color: white;
   bottom: 7%;
   left: 5%;
   right: 5%;
   padding-left: 3px;
   padding: 5px;
   border-radius: 10px;
-  background-color: white;
-  box-shadow: inset 0 0 7px black;
+  /* background-color: white;
+  box-shadow: inset 0 0 7px black; */
   font-size: 18px;
   font-weight: 500;
+
 }
 .imageCards {
+  opacity: 0.8;
   width: 100%;
   height: 100%;
   object-fit: cover;

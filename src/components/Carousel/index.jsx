@@ -34,14 +34,8 @@ function Carousel({ dataById }) {
 
   return (
     <div className="carousel">
-      <div
-        className="inner"
-        style={{ transform: `translate(-${activeIndex * 100}%)` }}
-      >
-        {picturesbYId.map((item, index) => {
-          return <img className="imgCarousel" src={item} key={index} alt="" />;
-        })}
-      </div>
+
+        <img src={picturesbYId[activeIndex]} alt="" className='imgCarousel' />
 
       <div className="carousel-buttons">
         <button
