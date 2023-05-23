@@ -30,16 +30,18 @@ function Logement() {
     const stars = [];
     for (let i = 0; i < 5; i++) {
       const starClass = i < rating ? starRed : starGray;
-      stars.push(<img src={starClass} alt="rating" key={i} className="star" />);
+      stars.push(<img src={starClass} alt="" key={i} className="star" />);
     }
     return stars;
   };
 
   return (
-    <div className="container-main-logement">
+    <main className="container-main-logement">
+
       <Carousel dataById={dataById} picture={picturesbyId} />
 
       <section className="container-div-title-host">
+        
         <div className="container-title-parag-tags">
           <h1 className="title-logement">{titleById}</h1>
           <p className="parag-logement">{locationById}</p>
@@ -62,9 +64,11 @@ function Logement() {
 
           <div className="styleRating">{addStar(ratingsById)}</div>
         </div>
+
       </section>
 
       <section className="container-infos-logement">
+
         <aside className="div-infos-padding">
           <Collapse name="Description">{descriptionById}</Collapse>
         </aside>
@@ -76,8 +80,9 @@ function Logement() {
             })}
           </Collapse>
         </aside>
+
       </section>
-    </div>
+    </main>
   );
 }
 

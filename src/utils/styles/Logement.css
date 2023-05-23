@@ -22,9 +22,11 @@
 .tags-logement {
   color: white;
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
 }
 .tags {
-  padding: 3px 14px;
+  padding: 3px 9px;
   background-color: rgba(255, 96, 96, 1);
   border-radius: 10px;
   font-size: clamp(10px, 2vw, 14px);

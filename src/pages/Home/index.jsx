@@ -10,13 +10,13 @@ import ImageHome from '../../assets/imgHome.png'
 function Home() {
 
   return (
-    <div className="mainContainerHome">
+    <main className="mainContainerHome">
       <div  className="divContainer">
         <img className='imageHome' src={ImageHome} alt="" />   
         <h1 className='paragraph-image-home'>Chez vous, partout et ailleurs</h1>
       </div>
 
-      <main className="divGridCard">
+      <section className="divGridCard">
         <div className="gridCard">
 
           {datas.map(
@@ -33,8 +33,8 @@ function Home() {
             )
           )}
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
 
