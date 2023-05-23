@@ -9,7 +9,7 @@ import '../../utils/styles/Propos.css';
 
 function Propos() {
   return (
-    <div>
+    <main>
       <div className="divContainerPropos">
         <img className="imagePropos" src={imgPropos} alt="" />
       </div>
@@ -19,7 +19,7 @@ function Propos() {
       <Collapse name={dataPropos[2].title}>{dataPropos[2].description}</Collapse>
       <Collapse name={dataPropos[3].title}>{dataPropos[3].description}</Collapse>
       
-    </div>
+    </main>
   );
 }
 

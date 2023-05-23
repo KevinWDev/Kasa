@@ -20,4 +20,5 @@
 .no-copy {
     font-size: clamp(12px, 2.5vw, 24px);
     color: white;
+    font-weight: 500;
 }

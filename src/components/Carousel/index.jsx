@@ -39,6 +39,7 @@ function Carousel({ dataById }) {
 
       <div className="carousel-buttons">
         <button
+          aria-label='previous'
           className="button-arrow"
           onClick={() => {
             updateIndex(activeIndex - 1);
@@ -54,6 +55,7 @@ function Carousel({ dataById }) {
           }
         </div>
         <button
+          aria-label='next'
           className="button-arrow"
           onClick={() => {
             updateIndex(activeIndex + 1);

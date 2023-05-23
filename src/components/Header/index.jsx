@@ -8,17 +8,15 @@ import '../../utils/styles/Header.css'
 
 function Header() {
   return (
-    <div className='divHeaderContainer'>
+    <header className='divHeaderContainer'>
       <div>
-        <Link to="/">
-          <img className='logoHeader' src={Logo} alt="" />
-        </Link>
+          <img className='logoHeader' src={Logo} alt="" />   
       </div>
       <div className='divLink'>
         <Link className='styledLink' to="/">Accueil</Link>
         <Link className='styledLink' to="/propos">À Propos</Link>
       </div>
-    </div>
+    </header>
   )
 }
 
