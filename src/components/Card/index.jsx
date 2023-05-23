@@ -17,7 +17,7 @@ function goToLogement() {
 
     <div className='containerPropriete' onClick={() => goToLogement()}> 
      <img className='imageCards' src={cover} alt="" />
-        <h2 className='proprieteParagraph'>{title}</h2>
+        <h2 className='proprieteTitle'>{title}</h2>
     </div>
 
   )

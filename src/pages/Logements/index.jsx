@@ -16,16 +16,8 @@ function Logement() {
   const { id } = useParams();
 
   let dataById = datas.find((d) => d.id === id);
-  let titleById = dataById?.title;
-  let locationById = dataById?.location;
-  let tagsById = dataById?.tags;
-  let hostNameById = dataById?.host.name;
-  let hostPictureById = dataById?.host.picture;
-  let ratingsById = dataById?.rating;
-  let descriptionById = dataById?.description;
-  let equipmentsById = dataById?.equipments;
-  let picturesbyId = dataById?.pictures;
   
+
   const addStar = (rating) => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
@@ -38,15 +30,15 @@ function Logement() {
   return (
     <main className="container-main-logement">
 
-      <Carousel dataById={dataById} picture={picturesbyId} />
+      <Carousel picturesById={dataById.pictures}/>
 
       <section className="container-div-title-host">
         
         <div className="container-title-parag-tags">
-          <h1 className="title-logement">{titleById}</h1>
-          <p className="parag-logement">{locationById}</p>
+          <h1 className="title-logement">{dataById.title}</h1>
+          <p className="parag-logement">{dataById.location}</p>
           <div className="tags-logement">
-            {tagsById.map((tags, index) => {
+            {dataById.tags.map((tags, index) => {
               return (
                 <div className="div-tags" key={index}>
                   <p className="tags">{tags}</p>
@@ -58,11 +50,11 @@ function Logement() {
 
         <div className="container-host">
           <div className="container-with-host-picture">
-            <p className="name-host">{hostNameById}</p>
-            <img className="picture-host" src={hostPictureById} alt="" />
+            <p className="name-host">{dataById.host.name}</p>
+            <img className="picture-host" src={dataById.host.picture} alt="" />
           </div>
 
-          <div className="styleRating">{addStar(ratingsById)}</div>
+          <div className="styleRating">{addStar(dataById.rating)}</div>
         </div>
 
       </section>
@@ -70,12 +62,12 @@ function Logement() {
       <section className="container-infos-logement">
 
         <aside className="div-infos-padding">
-          <Collapse name="Description">{descriptionById}</Collapse>
+          <Collapse name="Description">{dataById.description}</Collapse>
         </aside>
 
         <aside className="div-infos-padding">
           <Collapse name="Équipements">
-            {equipmentsById.map((equip, index) => {
+            {dataById.equipments.map((equip, index) => {
               return <li key={index}>{equip}</li>;
             })}
           </Collapse>

@@ -8,12 +8,12 @@ import Card from '../../components/Card';
 import ImageHome from '../../assets/imgHome.png'
 
 function Home() {
-
+  
   return (
     <main className="mainContainerHome">
       <div  className="divContainer">
-        <img className='imageHome' src={ImageHome} alt="" />   
-        <h1 className='paragraph-image-home'>Chez vous, partout et ailleurs</h1>
+        <img className='imageHome' src={ImageHome} alt="falaise" />   
+        <h1 className='title-image-home'>Chez vous, partout et ailleurs</h1>
       </div>
 
       <section className="divGridCard">

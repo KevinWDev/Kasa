@@ -8,7 +8,7 @@ function Footer() {
     <footer className="container-footer-main">
       <div className="container-footer">
         <div>
-          <img className="img-logo-footer" src={LogoWhite} alt="" />
+          <img className="img-logo-footer" src={LogoWhite} alt="Logo de Kasa" />
           <p className="no-copy">© 2020 Kasa. All rights reserved</p>
         </div>
       </div>

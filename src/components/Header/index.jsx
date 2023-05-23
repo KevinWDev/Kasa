@@ -10,12 +10,12 @@ function Header() {
   return (
     <header className='divHeaderContainer'>
       <div>
-          <img className='logoHeader' src={Logo} alt="" />   
+          <img className='logoHeader' src={Logo} alt="Logo de Kasa" />   
       </div>
-      <div className='divLink'>
+      <nav className='divLink'>
         <Link className='styledLink' to="/">Accueil</Link>
         <Link className='styledLink' to="/propos">À Propos</Link>
-      </div>
+      </nav>
     </header>
   )
 }
