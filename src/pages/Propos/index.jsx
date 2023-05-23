@@ -11,14 +11,18 @@ function Propos() {
   return (
     <main>
       <div className="divContainerPropos">
-        <img className="imagePropos" src={imgPropos} alt="" />
+        <img className="imagePropos" src={imgPropos} alt="Montagne" />
       </div>
 
-      <Collapse name={dataPropos[0].title}>{dataPropos[0].description}</Collapse>
-      <Collapse name={dataPropos[1].title}>{dataPropos[1].description}</Collapse>
-      <Collapse name={dataPropos[2].title}>{dataPropos[2].description}</Collapse>
-      <Collapse name={dataPropos[3].title}>{dataPropos[3].description}</Collapse>
-      
+      {dataPropos.map((data, index) => {
+        
+        return (
+        <Collapse name={data.title} key={index}>
+          {data.description}
+        </Collapse>
+        )
+        
+      })}     
     </main>
   );
 }

@@ -6,36 +6,35 @@ import arrowRight from '../../assets/arrows/arrowRight.png';
 // Hooks
 import { useEffect, useState } from 'react';
 
-function Carousel({ dataById }) {
+function Carousel({ picturesById }) {
 
-  const picturesbYId = dataById?.pictures;
   const [activeIndex, setActiveIndex] = useState(0);
   
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
-      newIndex = picturesbYId.length - 1;
-    } else if (newIndex >= picturesbYId.length) {
+      newIndex = picturesById.length - 1;
+    } else if (newIndex >= picturesById.length) {
       newIndex = 0;
     }
     setActiveIndex(newIndex);
   };
 
   useEffect(() => {
-    if (picturesbYId.length < 2) {
-      const deleteElem = document.querySelectorAll('.button-arrow');
-      const deletIndec = document.querySelector('.indicators');
+    if (picturesById.length < 2) {
+      const deleteBtn = document.querySelectorAll('.button-arrow');
+      const deletIndic = document.querySelector('.indicators');
 
-      deleteElem.forEach((e) => {
+      deleteBtn.forEach((e) => {
         e.style.display = 'none';
       });
-      deletIndec.style.display = 'none';
+      deletIndic.style.display = 'none';
     }
   }, []);
 
   return (
     <div className="carousel">
 
-        <img src={picturesbYId[activeIndex]} alt="" className='imgCarousel' />
+        <img src={picturesById[activeIndex]} alt="" className='imgCarousel' />
 
       <div className="carousel-buttons">
         <button
@@ -50,7 +49,7 @@ function Carousel({ dataById }) {
         <div className="indicators">
           {
             <span>
-              {activeIndex + 1}/{picturesbYId.length}
+              {activeIndex + 1}/{picturesById.length}
             </span>
           }
         </div>
