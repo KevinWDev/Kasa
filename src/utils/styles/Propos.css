@@ -12,4 +12,7 @@
     object-fit: cover;
     border-radius: 25px;
 }
-
+.containerCollapse {
+    max-width: 1020px;
+    margin: auto;
+}
