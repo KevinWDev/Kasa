@@ -8,7 +8,7 @@ import Home from '../../pages/Home/index.jsx';
 import Propos from '../../pages/Propos';
 import Logement from '../../pages/Logements';
 import Footer from '../../components/Footer';
-import Error from '../Error';
+import Error from '../../components/Error/index.jsx';
 
 
 function Router() {

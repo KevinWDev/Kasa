@@ -5,6 +5,7 @@ import datas from '../../datas/datas.json';
 // Composants / Pages
 import Carousel from '../../components/Carousel';
 import Collapse from '../../components/Collapse';
+import Error from '../../components/Error';
 // Styles
 import '../../utils/styles/Logement.css';
 // Assets
@@ -26,6 +27,8 @@ function Logement() {
     }
     return stars;
   };
+
+if (dataById) {
 
   return (
     <main className="container-main-logement">
@@ -76,6 +79,9 @@ function Logement() {
       </section>
     </main>
   );
+          } else if (!dataById) {
+            return <Error />
+          }
 }
 
 export default Logement;
