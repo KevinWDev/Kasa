@@ -13,11 +13,12 @@ import Error from '../../components/Error/index.jsx';
 
 function Router() {
   return (
-    <BrowserRouter basename='/'>
+    <BrowserRouter>
       <Container>
         <Header />
         <Routes>
-            <Route path="/" element={<Home />} />
+          <Route index element={<Home />}/>
+            <Route path="/home" element={<Home />} />
             <Route path="/propos" element={<Propos />} />
             <Route path="/logement/:id/" element={<Logement />}></Route>
             <Route path='*' element={<Error/>} />
