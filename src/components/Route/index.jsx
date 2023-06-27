@@ -17,8 +17,7 @@ function Router() {
       <Container>
         <Header />
         <Routes>
-          <Route index element={<Home />}/>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/propos" element={<Propos />} />
             <Route path="/logement/:id/" element={<Logement />}></Route>
             <Route path='*' element={<Error/>} />
