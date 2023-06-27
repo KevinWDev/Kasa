@@ -15,9 +15,9 @@ import starGray from '../../assets/stars/startGray.png';
 function Logement() {
 
   const { id } = useParams();
-
+console.log(id);
   let dataById = datas.find((d) => d.id === id);
-  
+  console.log(dataById);
 
   const addStar = (rating) => {
     const stars = [];
