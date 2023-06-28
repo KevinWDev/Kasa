@@ -13,7 +13,7 @@ import Error from '../../components/Error/index.jsx';
 
 function Router() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/Kasa'>
       <Container>
         <Header />
         <Routes>
